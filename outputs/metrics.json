@@ -1,0 +1,216 @@
+{
+  "project": "Market-Entry Prioritization Model with Monte Carlo Sensitivity Analysis",
+  "data_source": "illustrative (author-set, NOT official FRED/BLS/Census values)",
+  "fetch_attempts": [
+    {
+      "url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B19013_001E&for=metropolitan%20statistical%20area:*",
+      "status": "302",
+      "redirect_url": "https://api.census.gov/data/missing_key.html",
+      "key_error": "yes (redirect to missing_key.html)"
+    },
+    {
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=UNRATE",
+      "status": "200",
+      "redirect_url": null,
+      "key_error": null
+    }
+  ],
+  "n_metros": 10,
+  "metros": [
+    "Seattle, WA",
+    "Austin, TX",
+    "Denver, CO",
+    "Atlanta, GA",
+    "Dallas, TX",
+    "Phoenix, AZ",
+    "Raleigh, NC",
+    "Nashville, TN",
+    "Boston, MA",
+    "Chicago, IL"
+  ],
+  "indicators": [
+    "pop_growth_pct",
+    "median_hh_income_usd",
+    "bachelor_plus_pct",
+    "median_hourly_wage_usd",
+    "office_rent_usd_sqft_yr",
+    "competitors_per_100k",
+    "incumbent_share_pct"
+  ],
+  "base_weights": {
+    "pop_growth_pct": 0.15,
+    "median_hh_income_usd": 0.15,
+    "bachelor_plus_pct": 0.15,
+    "median_hourly_wage_usd": 0.15,
+    "office_rent_usd_sqft_yr": 0.15,
+    "competitors_per_100k": 0.125,
+    "incumbent_share_pct": 0.125
+  },
+  "weights_note": "Documented author exercise, NOT a stakeholder vote; weights sum to 1.0",
+  "base_ranking": [
+    {
+      "rank": 1,
+      "metro": "Raleigh, NC",
+      "composite_score": 0.8026
+    },
+    {
+      "rank": 2,
+      "metro": "Austin, TX",
+      "composite_score": 0.6677
+    },
+    {
+      "rank": 3,
+      "metro": "Nashville, TN",
+      "composite_score": 0.6264
+    },
+    {
+      "rank": 4,
+      "metro": "Phoenix, AZ",
+      "composite_score": 0.6103
+    },
+    {
+      "rank": 5,
+      "metro": "Denver, CO",
+      "composite_score": 0.6075
+    },
+    {
+      "rank": 6,
+      "metro": "Seattle, WA",
+      "composite_score": 0.5643
+    },
+    {
+      "rank": 7,
+      "metro": "Atlanta, GA",
+      "composite_score": 0.5219
+    },
+    {
+      "rank": 8,
+      "metro": "Dallas, TX",
+      "composite_score": 0.4654
+    },
+    {
+      "rank": 9,
+      "metro": "Boston, MA",
+      "composite_score": 0.4445
+    },
+    {
+      "rank": 10,
+      "metro": "Chicago, IL",
+      "composite_score": 0.2962
+    }
+  ],
+  "monte_carlo": {
+    "n_runs": 2000,
+    "seed": 42,
+    "sigma": 0.3,
+    "method": "lognormal weight perturbation exp(N(0, 0.30)), renormalised to sum 1.0",
+    "base_top3": [
+      "Raleigh, NC",
+      "Austin, TX",
+      "Nashville, TN"
+    ],
+    "pct_runs_base_top3_set_unchanged": 45.9,
+    "per_metro_top3_pct": {
+      "Raleigh, NC": 100.0,
+      "Austin, TX": 89.2,
+      "Nashville, TN": 56.3,
+      "Phoenix, AZ": 25.75,
+      "Denver, CO": 19.7,
+      "Seattle, WA": 9.05,
+      "Atlanta, GA": 0.0,
+      "Dallas, TX": 0.0,
+      "Boston, MA": 0.0,
+      "Chicago, IL": 0.0
+    },
+    "per_metro": [
+      {
+        "metro": "Raleigh, NC",
+        "base_rank": 1,
+        "mean_rank": 1.0,
+        "rank_min": 1,
+        "rank_max": 1,
+        "pct_runs_in_top3": 100.0
+      },
+      {
+        "metro": "Austin, TX",
+        "base_rank": 2,
+        "mean_rank": 2.286,
+        "rank_min": 2,
+        "rank_max": 5,
+        "pct_runs_in_top3": 89.2
+      },
+      {
+        "metro": "Nashville, TN",
+        "base_rank": 3,
+        "mean_rank": 3.516,
+        "rank_min": 2,
+        "rank_max": 6,
+        "pct_runs_in_top3": 56.3
+      },
+      {
+        "metro": "Phoenix, AZ",
+        "base_rank": 4,
+        "mean_rank": 4.437,
+        "rank_min": 2,
+        "rank_max": 8,
+        "pct_runs_in_top3": 25.75
+      },
+      {
+        "metro": "Denver, CO",
+        "base_rank": 5,
+        "mean_rank": 4.372,
+        "rank_min": 2,
+        "rank_max": 6,
+        "pct_runs_in_top3": 19.7
+      },
+      {
+        "metro": "Seattle, WA",
+        "base_rank": 6,
+        "mean_rank": 5.803,
+        "rank_min": 2,
+        "rank_max": 8,
+        "pct_runs_in_top3": 9.05
+      },
+      {
+        "metro": "Atlanta, GA",
+        "base_rank": 7,
+        "mean_rank": 6.888,
+        "rank_min": 5,
+        "rank_max": 9,
+        "pct_runs_in_top3": 0.0
+      },
+      {
+        "metro": "Dallas, TX",
+        "base_rank": 8,
+        "mean_rank": 8.313,
+        "rank_min": 7,
+        "rank_max": 9,
+        "pct_runs_in_top3": 0.0
+      },
+      {
+        "metro": "Boston, MA",
+        "base_rank": 9,
+        "mean_rank": 8.398,
+        "rank_min": 5,
+        "rank_max": 10,
+        "pct_runs_in_top3": 0.0
+      },
+      {
+        "metro": "Chicago, IL",
+        "base_rank": 10,
+        "mean_rank": 9.986,
+        "rank_min": 9,
+        "rank_max": 10,
+        "pct_runs_in_top3": 0.0
+      }
+    ]
+  },
+  "outputs": {
+    "workbook": "outputs/market_entry_model.xlsx",
+    "charts": [
+      "outputs/charts/composite_ranking.png",
+      "outputs/charts/monte_carlo_stability.png"
+    ],
+    "indicator_csv": "data/metro_indicators.csv"
+  }
+}
