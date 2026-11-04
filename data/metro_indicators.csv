@@ -1,0 +1,11 @@
+metro,pop_growth_pct,median_hh_income_usd,bachelor_plus_pct,median_hourly_wage_usd,office_rent_usd_sqft_yr,competitors_per_100k,incumbent_share_pct,data_source
+"Seattle, WA",1.8,115000,48,32.0,42,6.2,38,"illustrative (author-set, NOT official FRED/BLS/Census)"
+"Austin, TX",2.6,98000,46,27.0,34,7.8,30,"illustrative (author-set, NOT official FRED/BLS/Census)"
+"Denver, CO",1.5,102000,45,28.5,32,6.5,33,"illustrative (author-set, NOT official FRED/BLS/Census)"
+"Atlanta, GA",1.9,88000,38,25.0,28,8.4,35,"illustrative (author-set, NOT official FRED/BLS/Census)"
+"Dallas, TX",2.2,92000,36,25.5,30,9.1,40,"illustrative (author-set, NOT official FRED/BLS/Census)"
+"Phoenix, AZ",2.4,84000,32,24.0,26,7.2,28,"illustrative (author-set, NOT official FRED/BLS/Census)"
+"Raleigh, NC",2.1,101000,47,26.5,29,5.4,26,"illustrative (author-set, NOT official FRED/BLS/Census)"
+"Nashville, TN",2.0,90000,37,24.5,27,6.8,31,"illustrative (author-set, NOT official FRED/BLS/Census)"
+"Boston, MA",0.9,118000,50,33.5,48,5.9,42,"illustrative (author-set, NOT official FRED/BLS/Census)"
+"Chicago, IL",0.6,94000,39,29.0,31,8.9,44,"illustrative (author-set, NOT official FRED/BLS/Census)"
